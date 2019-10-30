@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSCI571 HW3</title>
+	<style type="text/css">
+		*{margin:0;padding:0}
+		@font-face {
+			font-family: Futura_PT_Heavy;
+			src: url(Futura_PT_Heavy.ttf);
+		}
+		@font-face {
+			font-family: Proxima_Nova_Regular;
+			src: url(Proxima_Nova_Regular.ttf);
+		}
+		body {
+			font-family: Futura_PT_Heavy;
+			color: white;
+			background-color: white;
+			/*width: 963px;*/
+			height: 100%;
+			margin: 0 auto; 
+			overflow-x: hidden;
+			overflow-y: hidden;
+		}
+		h1 {
+			font-size: 88px;
+			line-height: 90px;
+			font-weight: lighter;
+			text-align: center;
+		}
+		h3 {
+			font-size: 28px;
+			font-weight: lighter;
+			letter-spacing: 5px;
+			margin-top: auto;
+			margin-bottom: auto;
+		}
+		h4 {
+			font-size: 10px;
+			font-weight: normal;
+			letter-spacing: 2px;
+		}
+		
+		img {
+			position: absolute;
+			clip: rect(0px, 630px,500px,130px);
+			transform: scale(0.8);
+		}
+
+		p {
+			text-align: center;
+			font-size: 19.5px;
+			font-family: Proxima_Nova_Regular;
+			font-weight: normal;
+			line-height: 30px;
+		}
+		.backSnow1 {
+			width: 963px;
+			height: 805px;
+			background-image: url(http://csci571.com/hw/hw3/images/snow1.jpg);
+			background-size: 138% 110%;
+			background-position: top;
+			background-repeat: no-repeat;
+			margin-left: auto;
+			margin-right: auto;
+			/*margin-top: 276px;*/
+			transform: translateX(-4px);
+		}
+		.backMid {
+			width: 963px;
+			height: 200px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.backSnow2 {
+			width: 963px;
+			height: 805px;
+			background-image: url(http://csci571.com/hw/hw3/images/snow6.jpg);
+			background-size: 138% 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+			margin-left: auto;
+			margin-right: auto;
+			transform: translateX(-4px);
+		}
+		.backEnd {
+			min-height: 200px;
+		}
+		.cut {
+			position: absolute;
+			clip: rect(0px, 650px,400px,200px);
+		}
+		.bg1 {
+			width: 963px;
+			height: 805px;
+			background-color: rgba(0,0,0,0.1);
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.bg2 {
+			width: 963px;
+			height: 1200px;
+			background-color: white;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.bg3 {
+			width: 963px;
+			height: 805px;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
+		.parallax {
+			perspective: 1px;
+			height: 968px;
+			overflow-x: hidden;
+			overflow-y: auto;
+			background-color: white;
+		}
+		.parallax_layer {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+		.parallax_layer--base {
+			transform: translateZ(0);
+		}
+		.parallax_layer--back {
+			transform: translateZ(-1px) scale(2);
+		}
+		.div1 {
+			float: left;
+			height: 35px;
+			margin-left: 80px;
+			margin-top: 30px;
+			
+		}
+		.div2 {
+			float: right;
+			height: 35px;
+			margin-right: 90px;
+			margin-top: 30px;
+			text-align: center;
+		}
+		.line {
+			float: left;
+			margin-left: 25px;
+			margin-top: 11px;
+		}
+		.title {
+			width: 963px;
+			float: left;
+			margin-top: 149px;
+			
+		}
+		.main {
+			width: 963px;
+			float: left;
+			margin-top: 55px;
+		}
+		.button_div {
+			width: 963px;
+			float: left;
+			margin-top: 30px;
+			text-align: center;
+		}
+		.button {
+			border: none;
+			font-family:Futura_PT_Heavy;
+			width: 132px;
+			height: 48px;
+			font-size: 11px;
+			letter-spacing: 1px; 
+			background-color: white;
+			color: black;
+		}
+		.p1{
+			width: 470px;
+			height: 150px;
+			margin-left: 280px;
+			margin-top: 50px;
+			color: rgb(102,102,102); 
+			text-align: left; 
+			font-size: 13px;
+			line-height: 25px;
+		}
+		.p2 {
+			height: 90;
+			margin-top: 358px;
+		}
+		.arrow {
+			width: 40px;
+			height: 20px;
+			float: left;
+			margin-left: 461px;
+			margin-top: 120px;
+		}
+		.arrow_left {
+			width: 23px;
+			height: 2px;
+			float: left;
+			margin-left: 0px;
+			margin-top: 10px;
+			background-color: white;
+			transform: rotate(40deg);
+		}
+		.arrow_right {
+			width: 23px;
+			height: 2px;
+			float: right;
+			margin-right: 0px;
+			margin-top: -2px;
+			background-color: white;
+			transform: rotate(140deg);
+		}
+		
+	</style>
+</head>
+
+	<body>
+		<div class="parallax">
+			<div class="parallax_layer parallax_layer--back"> 
+				<div class="backSnow1"></div>
+				<div class="backMid"></div>
+				<div class="backSnow2"></div>
+				<div class="backEnd"></div>
+			</div>
+
+
+			<div class="parallax_layer parallax_layer--base">
+				
+				<div class="bg1 ">
+					<div class="div1">
+						<h3>SNOWBOARD CENTRAL</h3>
+					</div>
+					<div class="div2">
+						<div class="line"><h4>HOME</h4></div>
+						<div class="line"><h4>ABOUT</h4></div>
+						<div class="line"><h4>GALLERY</h4></div>
+						<div class="line"><h4>JOURNAL</h4></div>
+						<div class="line"><h4>CONTACT</h4></div>
+					</div>
+					<div class="title"><h1>Bend the <br>Mind</h1></div>
+					<div class="main">
+						<p>James Jantz is a snowboarder living in Jackson Hole, WY <br>
+							and riding around the world. Lorem ipsum dolor sit amet <br>
+							consectetuer adipiscing elit nam nibh. Nunc varius facilisis <br>
+							eros sed erat in in velit quis arcu ornare laoreet.
+						</p>
+					</div>
+					<div class="button_div">
+						<button class="button">LEARN MORE</button>
+					</div>
+					<div class="arrow">
+						<div class="arrow_left"></div>
+						<div class="arrow_right"></div>
+					</div>
+				</div>
+
+				<div class="bg2">
+					<div style="width: 900px; height: 890px;margin:0 auto;">
+						<img src="http://csci571.com/hw/hw3/images/snow2.jpg" style="margin-left: -138px; margin-top: 23px;">
+						<img src="http://csci571.com/hw/hw3/images/snow3.jpg" style="margin-left: 279px; margin-top: 23px;">
+						<img src="http://csci571.com/hw/hw3/images/snow4.jpg" style="margin-left: -138px; margin-top: 440px;">
+						<img src="http://csci571.com/hw/hw3/images/snow5.jpg" style="margin-left: 279px; margin-top: 440px;">
+					</div>
+					<p class="p1">
+							Lorem ipsum dolor sit amet consectetuer adipiscing elit nam nibh. Nunc varius <br>
+							facilisis eros sed erat in in velit quis arcu ornare laoreet. Curabitur adipiscing luctus <br>
+							massa. Integer ut purus ac augue commodo. Nunc nec mi eu justo tempor <br>
+							consectetuer. Etiam vitae nisi. In dignissim lacus ut ante. <br>
+							<br>
+							Photography courtesy of Cari Sutter.
+					</p>
+					
+				</div>
+
+				<div class="bg3">
+					<p class="p2">Lorem ipsum dolor sit amet consectetuer adipiscing elit nam <br>
+						nibh. Nunc varius facilisis eros sed erat in in velit quis arcu <br>
+						ornare laoreet.
+					</p>
+				</div>
+
+			</div>
+		</div>
+	</body>
+</html>
+
+	
+
+	
